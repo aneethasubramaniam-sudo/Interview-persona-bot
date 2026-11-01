@@ -43,7 +43,9 @@ function renderTabs() {
     b.type = "button";
     b.className = "role-tab" + (r.id === state.role ? " active" : "");
     b.dataset.role = r.id;
-    b.innerHTML = `<span class="rt-name">${r.name}</span><span class="rt-sub">${r.tagline}</span>`;
+    b.title = r.tagline;
+    b.setAttribute("aria-pressed", r.id === state.role);
+    b.innerHTML = `<span class="rt-name">${r.name}</span>`;
     b.addEventListener("click", () => selectRole(r.id));
     els.roles.appendChild(b);
   }
