@@ -8,6 +8,8 @@ Roles covered:
 2. **Forward Deployed Engineer**: customer scoping, integrations, live debugging, system design.
 3. **AI Researcher**: ML fundamentals, papers, experiment design, research taste.
 
+**Live app:** https://aneethasubramaniam-sudo.github.io/Interview-persona-bot/
+
 ## Features
 
 - Three round role buttons. Each role has its own coach prompt, starter questions and chat history.
@@ -36,6 +38,12 @@ Other commands:
 npm run build     # production build in dist/
 npm run preview   # serve the build locally
 ```
+
+## Deploy
+
+The app is static, so any static host works. This repo deploys to GitHub Pages with `.github/workflows/deploy.yml` on every push to `main`.
+
+One-time setup: in the repo, go to Settings, Pages, and set Source to **GitHub Actions**.
 
 ## Using the app
 
