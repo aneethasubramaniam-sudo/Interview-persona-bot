@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-role="pm">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Persona Bot | AI role prep</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <div>
+            <h1>Interview Persona Bot</h1>
+            <p>Prep for AI roles with a coach that knows the job</p>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button id="clearBtn" class="ghost" type="button">Clear chat</button>
+          <button id="settingsBtn" class="ghost" type="button">API key</button>
+        </div>
+      </header>
+
+      <nav class="roles" id="roles" aria-label="Choose the role you are interviewing for"></nav>
+
+      <main class="chat-card">
+        <div class="chat-head">
+          <span class="chip-live" id="roleLabel"></span>
+          <span class="model-tag" id="modelTag"></span>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <form class="composer" id="composer" autocomplete="off">
+          <textarea
+            id="input"
+            rows="1"
+            placeholder="Ask a question, or say: start a mock interview"
+          ></textarea>
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <div class="modal" id="keyModal" hidden>
+      <form class="modal-card" id="keyForm">
+        <h2>Enter your Gemini API key</h2>
+        <p>
+          You need a key to chat. Get one free at
+          <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a>.
+          Your key goes straight from your browser to Google. There is no server in between.
+        </p>
+        <label for="keyInput">API key</label>
+        <input id="keyInput" type="password" placeholder="AIza..." autocomplete="off" spellcheck="false" />
+        <label for="modelInput">Model</label>
+        <input id="modelInput" type="text" spellcheck="false" />
+        <label class="check">
+          <input id="rememberInput" type="checkbox" />
+          Remember on this device
+        </label>
+        <p class="warn">Only use this on a device you trust. Anyone with access to this browser could read a saved key.</p>
+        <p class="err" id="keyErr" hidden></p>
+        <div class="modal-actions">
+          <button id="keyCancel" class="ghost" type="button" hidden>Cancel</button>
+          <button type="submit">Save and start</button>
+        </div>
+      </form>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
